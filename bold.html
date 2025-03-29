@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'/>
+  <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+  <meta content='d497cc4536910f086b0711b2f423a6f8' name='monetag'/>
+
+  <title>CHANZAI[STREAM]</title>
+  <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmiQ52tZ8d5oFGEooLWqy-w8s7Xd55e38AhBUx5eYU8X3FCa0F0HUTZEmzFnrDIUlAKwVEJQehWm_ugEpiH6ANKONM76ac31sYC0-gQBhtB_ZkFClm23QxPEAiwLxkuDb89TgyHi50X7_yrl7NWcIwqCzCjUJmeoGOzCvzsPRLDFfwFUrvHNqtwBvzMfU/s1600/zgold%20%281%29.png' rel='icon' type='image/png'/>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet'/>
+  <link href='https://api.fontshare.com/v2/css?f[]=bespoke-stencil@400,500,700&display=swap' rel='stylesheet'/>
+
+  <!-- Google tag (gtag.js) -->
+  <script async='async' src='https://www.googletagmanager.com/gtag/js?id=G-499P93RT0B'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-499P93RT0B');
+  </script>
+
+  <!-- Context menu prevention -->
+  <script>document.addEventListener('contextmenu', function(event) {event.preventDefault();});</script>
+
+  <!-- DevTools disabling -->
+  <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
+  <script src="anti-inspect-element.js"></script>
+  <script src="inpect.jsS"></script>
+
+  <!-- Fontawesome -->
+  <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css' integrity='sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==' referrerpolicy='no-referrer' rel='stylesheet'/>
+
+  <!-- Loader script -->
+  <script defer='defer'>
+    window.addEventListener("load", function() {
+      document.getElementById("loader").style.display = "none";
+    });
+  </script>
+
+  <style>
+    :root {
+      --primary-color: #e50914;
+      --primary-hover: #f8192a;
+      --secondary-color: #ffd700;
+      --text-color: #ffffff;
+      --text-muted: #aaaaaa;
+      --bg-color: #141414;
+      --bg-darker: #0f0f0f;
+      --card-color: #181818;
+      --shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+      --transition: all 0.3s ease;
+      --radius: 8px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-darker);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-family: 'Bespoke Stencil', sans-serif;
+    }
+
+    /* === LOADER === */
+    #loader {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: var(--bg-darker);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .loader-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .loader-logo {
+      width: 100px;
+      animation: pulse 2s infinite;
+    }
+
+    .loading-text {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 5px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      border-top-color: var(--primary-color);
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+
+    /* === MEDIA DETAIL STYLES === */
+    #cover {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      color: #fff;
+      padding: 80px 5%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(0deg,
+        rgba(15, 15, 15, 1) 0%,
+        rgba(15, 15, 15, 0.9) 20%,
+        rgba(15, 15, 15, 0.8) 40%,
+        rgba(15, 15, 15, 0.4) 60%,
+        rgba(15, 15, 15, 0.2) 80%,
+        rgba(15, 15, 15, 0) 100%
+      );
+      z-index: 1;
+    }
+
+    .back {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      background: rgba(0, 0, 0, 0.5);
+      color: var(--text-color);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 5;
+      text-decoration: none;
+    }
+
+    .back:hover {
+      background: var(--primary-color);
+      transform: scale(1.05);
+    }
+
+    .poster-container {
+      position: relative;
+      width: 350px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      z-index: 2;
+    }
+
+    #poster {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .media-content {
+      width: 50%;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 2;
+    }
+
+    #title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+
+    .meta-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 20px;
+      color: var(--text-muted);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .meta-item i {
+      color: var(--primary-color);
+    }
+
+    .overview-section h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    #overview {
+      line-height: 1.7;
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    #actors {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+
+    /* === TRAILER CONTAINER === */
+    .trailer-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+
+    .trailer-container.active {
+      display: flex;
+    }
+
+    .trailer-wrapper {
+      position: relative;
+      width: 80%;
+      max-width: 1000px;
+      aspect-ratio: 16/9;
+    }
+
+    .close-trailer {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .close-trailer:hover {
+      color: var(--primary-color);
+    }
+
+    #trailer {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* === STREAM MODE === */
+    .stream-mode {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-darker);
+      z-index: 50;
+      display: none;
+      flex-direction: column;
+    }
+
+    .stream-mode.active {
+      display: flex;
+    }
+
+    .stream-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stream-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .stream-controls {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .server-select {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .server-select option {
+      background: var(--bg-darker);
+      color: white;
+    }
+
+    .stream-content {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .stream-player {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: black;
+    }
+
+    #streaming {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* === EPISODES PANEL === */
+    #season-episode-container {
+      width: 350px;
+      background: var(--bg-darker);
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    #seasonSelect {
+      width: 100%;
+      background: var(--card-color);
+      border: none;
+      color: white;
+      padding: 15px;
+      font-size: 1rem;
+      outline: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #episodeSelect {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px;
+    }
+
+    #episodeSelect::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    #episodeSelect::-webkit-scrollbar-track {
+      background: var(--bg-darker);
+    }
+
+    #episodeSelect::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+    }
+
+    .episode-container {
+      margin-bottom: 15px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--card-color);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+    }
+
+    .episode-container:hover {
+      transform: translateY(-3px);
+    }
+
+    .episode-button {
+      width: 100%;
+      text-align: left;
+      padding: 12px 15px;
+      background: transparent;
+      color: white;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .active-episode {
+      color: var(--primary-color);
+    }
+
+    .episode-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+
+    .episode-image-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .episode-container:hover .episode-image-bg {
+      transform: scale(1.05);
+    }
+
+    .playhover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .episode-container:hover .playhover {
+      opacity: 1;
+    }
+
+    .episode-overview {
+      padding: 15px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* === LOADING === */
+    #loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      z-index: 5;
+    }
+
+    .loading-spinner {
+      width: 48px;
+      height: 48px;
+      border: 5px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      border-top-color: var(--primary-color);
+      animation: spin 1s linear infinite;
+    }
+
+    /* === RESPONSIVE STYLES === */
+    @media (max-width: 1200px) {
+      #cover {
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 5% 60px;
+        gap: 40px;
+      }
+
+      .poster-container {
+        width: 300px;
+      }
+
+      .media-content {
+        width: 100%;
+        max-width: 700px;
+      }
+
+      #title {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #cover {
+        padding: 80px 5% 40px;
+      }
+
+      .back {
+        top: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+
+      .poster-container {
+        width: 250px;
+      }
+
+      #title {
+        font-size: 2rem;
+      }
+
+      .action-buttons {
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+
+      .stream-header {
+        padding: 10px 15px;
+      }
+
+      .stream-title {
+        font-size: 1rem;
+      }
+
+      .stream-content {
+        flex-direction: column;
+      }
+
+      #season-episode-container {
+        width: 100%;
+        height: 40%;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .stream-player {
+        height: 60%;
+      }
+
+      .trailer-wrapper {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #cover {
+        padding: 70px 5% 30px;
+      }
+
+      .poster-container {
+        width: 200px;
+      }
+
+      #title {
+        font-size: 1.8rem;
+      }
+
+      .meta-info {
+        gap: 10px;
+      }
+
+      .btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- LOADER -->
+  <div id='loader'>
+    <div class='loader-content'>
+      <img src="https://i.ibb.co/n0c3gXW/1.png" alt="CHANZAI" class="loader-logo">
+      <div class='spinner'></div>
+      <p class="loading-text">Loading amazing content for you...</p>
+    </div>
+  </div>
+
+  <!-- BACK BUTTON -->
+  <a href='https://christianzgaming.github.io/website/' class='back'>
+    <i class='fa-solid fa-arrow-left'></i>
+  </a>
+
+  <!-- DETAIL PAGE CONTENT -->
+  <div id='cover'>
+    <div class='overlay'></div>
+
+    <!-- TRAILER MODAL -->
+    <div class='trailer-container'>
+      <div class='trailer-wrapper'>
+        <div class='close-trailer'>&times;</div>
+        <iframe id='trailer' allowfullscreen='true' frameborder='0'></iframe>
+      </div>
+    </div>
+
+    <!-- POSTER -->
+    <div class='poster-container'>
+      <img alt='Movie Poster' id='poster' src=''/>
+      <div class='streambtn-c'>
+        <button class='btn btn-primary stream-btn'>
+          <i class='fa-solid fa-play'></i> Watch Now
+        </button>
+      </div>
+    </div>
+
+    <!-- MEDIA INFO -->
+    <div class='media-content'>
+      <h1 id='title'>Title</h1>
+
+      <div class='meta-info'>
+        <div class='meta-item' id='rating-meta'>
+          <i class='fa-solid fa-star'></i>
+          <span id='rating'>Rating</span>
+        </div>
+
+        <div class='meta-item'>
+          <i class='fa-solid fa-film'></i>
+          <span id='genre'>Genres</span>
+        </div>
+
+        <div class='meta-item'>
+          <i class='fa-solid fa-calendar'></i>
+          <span id='year'>Year</span>
+        </div>
+
+        <div class='meta-item'>
+          <i class='fa-solid fa-clock'></i>
+          <span id='runtime'>Runtime</span>
+        </div>
+      </div>
+
+      <div class='overview-section'>
+        <h3>Overview</h3>
+        <p id='overview'>Description</p>
+      </div>
+
+      <div class='cast-section'>
+        <h3>Cast</h3>
+        <p id='actors'>Cast info</p>
+      </div>
+
+      <div class='action-buttons'>
+        <button class='btn btn-primary stream-btn'>
+          <i class='fa-solid fa-play'></i> Watch Now
+        </button>
+
+        <button class='btn btn-secondary trailer-btn'>
+          <i class='fa-solid fa-film'></i> Watch Trailer
+        </button>
+
+        <button class='btn btn-secondary download-btn'>
+          <i class='fa-solid fa-download'></i> Download
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STREAMING MODE -->
+  <div class='stream-mode'>
+    <div class='stream-header'>
+      <div class='stream-back'>
+        <i class='fa-solid fa-arrow-left'></i> Back
+      </div>
+
+      <div class='stream-title'>
+        <span id='streaming-title'>Title</span>
+        <span id='episode-info'></span>
+      </div>
+
+      <div class='stream-controls'>
+        <p class='notice'><b>Note:</b> Changing server might take time to load</p>
+
+        <select id='serverSelect' class='server-select' onchange='changeServer()'>
+          <option value='vidsrc'>ZSTREAMPRO</option>
+          <option value='vidlink'>SERVER 2</option>
+          <option selected='true' value='vidcc'>SERVER 3</option>
+          <option value='pro'>SERVER 4</option>
+          <option value='to'>SERVER 5</option>
+          <option value='super'>SERVER 6</option>
+          <option value='prime'>SERVER 7</option>
+        </select>
+      </div>
+    </div>
+
+    <div class='stream-content'>
+      <div class='stream-player'>
+        <div id='loading'>
+          <div class='loading-spinner'></div>
+          <p>Preparing your stream...</p>
+        </div>
+
+        <iframe allowfullscreen='true' frameborder='0' id='streaming'></iframe>
+      </div>
+
+      <div id='season-episode-container'>
+        <select id='seasonSelect' onchange='updateEpisodes()'></select>
+        <div id='episodeSelect'></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Popups
+    function openPopup(url) {
+      window.open(url, '_blank', 'width=600,height=400');
+    }
+
+    // ServiceWorker registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js?v=0.3');
+      });
+    }
+  </script>
+  <script src="detail.js"></script>
+</body>
+</html>
